@@ -1,7 +1,11 @@
 import pytube as pt
+from sty import *
+
 
 # User search what video they want
-user_input = input("What do you want to search? ")
+
+print(fg.red + 'Search Query:' + fg.rs)
+user_input = input("")
 yt = pt.Search(user_input)
 
 # Filter and show user the results
@@ -14,7 +18,7 @@ options_name = ""
 
 if results_name == "None":
     print("Sorry, no results found")
-    exit(1)
+    exit(0)
 
 for string in results_name:
     number += 1
@@ -31,7 +35,8 @@ print(new_results_name)
 new_results_id = []
 
 for string in yt.results:
-    new_string = str(string).replace("<pytube.__main__.YouTube object: videoId=", "")
+    new_string = str(string).replace(
+        "<pytube.__main__.YouTube object: videoId=", "")
     new_string = new_string.replace(">", "")
     new_results_id.append(new_string)
 
