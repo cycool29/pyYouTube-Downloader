@@ -4,6 +4,11 @@ from sty import *
 
 # User search what video they want
 
+def show_help_message():
+    print(fg(255, 0, 0) + 'py-YouDown' + fg.rs)
+
+
+
 print(fg.red + 'Search Query:' + fg.rs)
 user_input = input("")
 yt = pt.Search(user_input)
